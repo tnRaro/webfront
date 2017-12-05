@@ -1,0 +1,52 @@
+nav {
+}
+
+nav > h1 {
+	display: inline-block;
+	font-size: 1rem;
+	padding: 0;
+	margin: 0;
+}
+
+nav > ul {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+nav > ul > li {
+	display: inline-block;
+	min-width: 65px;
+	text-align: center;
+	margin: 0 .8em;
+}
+
+nav > ul > li ul {
+	position: absolute;
+	background-color: #eee;
+	text-align: left;
+	list-style-type: none;
+	margin: 0;
+	padding: 0px 15px;
+	z-index: 50;
+}
+
+nav > ul > li li {
+	margin: 15px 0;
+	line-height: 2em;
+}
+
+nav > ul > li li img {
+	height: 1em;
+	line-height: 2em;
+}
+
+nav#top {
+	text-align: right;
+	margin: 10px 0;
+	font-size: 10pt;
+}
+
+nav#navigation-bar {
+	margin: 20px 0;
+}

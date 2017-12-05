@@ -1,0 +1,32 @@
+.sidebar {
+	display: block;
+	position: absolute;
+	right: 10px;
+	top: 50px;
+	border: 1px solid #bbb;
+	border-radius: 5px;
+	background: white;
+	z-index: 50;
+	width: 100px;
+	height: 200px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.sidebar h1 {
+	font-size: 12pt;
+}
+
+.sidebar h2 {
+	font-size: 11pt;
+	padding: 0;
+	margin: 0;
+}
+
+.sidebar h1 img {
+	height: 1em;
+}
+
+.sidebar div {
+	font-size: 10px;
+}

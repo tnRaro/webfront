@@ -1,0 +1,33 @@
+.popup {
+	display: block;
+	position: absolute;
+	background-color: #c0c0c0;
+	width: 676px;
+	height: 403px;
+	top: 20%;
+	left: 20%;
+	z-index: 100;
+}
+
+.popup [data-type="close"] {
+	float: right;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+.popup [data-type="close"]:hover {
+	color: #4b89ff;
+}
+
+.popup img {
+	display: block;
+	width: 676px;
+	height: 383px;
+	background: url("http://file.aniplustv.com/aniplustv/banner/banner_20171106162617.jpg");
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+
+.popup.closed {
+	display: none;
+}

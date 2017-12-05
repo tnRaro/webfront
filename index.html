@@ -3,69 +3,122 @@
 <head>
 	<meta charset="utf8">
 	<title>new document</title>
-	<link rel="stylesheet" href="css/jquery.lightbox.css">
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-	<script src="lib/jquery.lightbox.min.js"></script>
-	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-	<script src="https://unpkg.com/imagesloaded@4.1.3/imagesloaded.pkgd.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-	<style>
-	.grid-item {
-		float: left;
-		width: 200px;
-		border-radius: 10px;
-	}
-	</style>
-	<script>
-		$(function(){
-			const images = [
-				"http://gf.ppgame.com/CKFinderJava/1/files/1%20(2).png",
-				"http://gf.ppgame.com/CKFinderJava/1/files/dongh.jpg",
-				"http://gf.ppgame.com/CKFinderJava/1/files/1%20(2).jpg",
-				"http://gf.ppgame.com/CKFinderJava/1/files/shengdan(1).jpg",
-				"http://gf.ppgame.com/CKFinderJava/1/files/ump45.jpg",
-				"http://gf.ppgame.com/CKFinderJava/1/files/9A91.jpg",
-				"http://gf.ppgame.com/CKFinderJava/1/files/KP31.jpg",
-				"http://gf.ppgame.com/CKFinderJava/1/files/mk2.jpg"
-			];
-
-			for(let image of images){
-				$("#container").append($(`
-					<img src="${image}" style="width: 200px;"/>
-				`));
-			}
-
-			const slider = $("#container").bxSlider({
-				mode: "horizontal",
-				speed: 500,
-				pager: false,
-				moveSlides: 1,
-				slideWidth: 200,
-				minSlides: 4,
-				maxSlides: 4,
-				slideMargin: 10,
-				auto: true,
-				autoHover: true,
-				controls: false
-			});
-			$("#prev").click(function(){
-				slider.goToPrevSlide();
-				console.log("poi");
-				return false;
-			});
-			$("#next").click(function(){
-				slider.goToNextSlide();
-				console.log("poi");
-				return false;
-			});
-		});
-	</script>
+	<script src="lib/jquery-ui.min.js"></script>
+	<script src="lib/slick.min.js"></script>
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/slick-theme.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/popup.css">
+	<link rel="stylesheet" href="css/sidebar.css">
+	<link rel="stylesheet" href="css/nav.css">
+	<link rel="stylesheet" href="css/carousel.css">
+	<script src="js/popup.js"></script>
+	<script src="js/nav.js"></script>
+	<script src="js/carousel.js"></script>
+	<script src="js/sidebar.js"></script>
 </head>
 <body>
-	<div id="container">
-
+	<aside class="sidebar">
+		<h1>
+			<img src="https://iota.org/favicon.ico" /> IOTA</br>
+			실시간 시세
+		</h1>
+		<h2>가격</h2>
+		<span id="last"></span>
+		<h2>거래량</h2>
+		<span id="volume"></span>
+		<h2>전일대비</h2>
+		<span id="delta"></span>
+	</aside>
+	<aside class="popup">
+		<div data-type="close">X</div>
+		<img />
+	</aside>
+	<div class="container">
+		<nav id="top">
+			<ul>
+				<li><a href="#">마이페이지</a></li>
+				<li><a href="#">회원가입</a></li>
+				<li><a href="#">채용정보</a></li>
+				<li><a href="#">사이트맵</a></li>
+			</ul>
+		</nav>
 	</div>
-	<button id="prev">prev</button>
-	<button id="next">next</button>
+	<header>
+		<div class="container">
+			<nav id="navigation-bar">
+				<h1><a href="#" class="tnraro-logo"></a></h1>
+				<ul>
+					<li><a href="#">소개</a></li>
+					<li>
+						<a href="#">신작정보</a>
+						<ul>
+							<li><a href="#">2017-4분기</a></li>
+							<li><a href="#">2017-3분기</a></li>
+							<li><a href="#">2017-2분기</a></li>
+							<li><a href="#">2017-1분기</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">놀음</a>
+						<ul>
+							<li><a href="http://store.steampowered.com/"><img src="http://store.steampowered.com/favicon.ico"> 증기 : 놀음 수집 놀음</a></li>
+							<li><a href="http://kr.battle.net/heroes/ko/"><img src="http://us.battle.net/heroes/static/images/icons/favicon.ico?v=58-87"> 시공의 폭풍</a></li>
+							<li><a href="https://playbattlegrounds.com/"><img src="http://d1wfiv6sf8d64f.cloudfront.net/static/pc/img/pubg.ico"> 누구야의 싸움판</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">고먐미</a>
+						<ul>
+							<li><a href="#">기여어</a></li>
+							<li><a href="#">기엽다</a></li>
+							<li><a href="#">기여엉</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="container">
+		<article>
+			<section>
+				<h1>이벤트 정보</h1>
+				<div data-type="carousel-background"></div>
+				<ul id="event-info-carousel" class="carousel">
+
+				</ul>
+			</section>
+			<section>
+				<h1>Lorem Ipsum</h1>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce venenatis vulputate ante, quis aliquet mi blandit in. Morbi suscipit dignissim risus et rhoncus. Donec ligula est, ullamcorper eget tempus ac, faucibus vel lectus. Fusce rhoncus auctor lectus, ut porttitor purus mollis sit amet. Etiam ultrices, diam nec malesuada ullamcorper, sapien dui lacinia lorem, vitae posuere neque risus nec nulla. Morbi mi quam, ornare nec consectetur a, rutrum id ligula. Ut ut massa ac metus fermentum rhoncus vel ac urna. Ut nec enim nec erat aliquet laoreet. Nullam at elit tortor. Donec sit amet massa nec dolor mattis commodo. Aenean eleifend luctus pharetra. Phasellus a interdum nisi, quis aliquam felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras elementum dolor ut ante viverra, ut cursus urna tincidunt.
+				</p>
+			</section>
+		</article>
+	</div>
+	<footer>
+		<div class="container">
+			<div style="float: right; text-align: right;">
+				<p>
+					<span class="b">채용</span>
+					<a href="mailto:recruit@tnraro.com">recruit@tnraro.com</a>
+				</p>
+				<p>
+					<span class="b">제휴</span>
+					<a href="mailto:biz@tnraro.com">biz@tnraro.com</a>
+				</p>
+				<p>
+					<span class="b">PR/기타</span>
+					<a href="mailto:contact@tnraro.com">contact@tnraro.com</a>
+				</p>
+			</div>
+			<address>
+				<p>강원도 동해시 태백로 53, 고미빌딩 / 대표 양호진 / 개인</p>
+				<p>전화번호 010-1234-5678 / FAX 없엉</p>
+			</address>
+			<a class="tnraro-logo" href="#"></a>
+		</div>
+	</footer>
 </body>
 </html>
